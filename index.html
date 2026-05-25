@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ThalaBlood – Thalassemia Health Tracker</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #F5F5F5;
+      color: #333;
+    }
+
+    header {
+      background: #CC0000;
+      color: white;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+      color: #fff;
+      opacity: 0.9;
+    }
+
+    nav {
+      background: #AA0000;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 28px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover { opacity: 1; background: rgba(255,255,255,0.1); }
+
+    section {
+      max-width: 760px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: #CC0000;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1rem;
+      color: #CC0000;
+      margin: 20px 0 8px;
+    }
+
+    p { line-height: 1.7; color: #555; margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      padding-left: 20px;
+      color: #555;
+      line-height: 1.9;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .feature {
+      background: #FFF5F5;
+      border-left: 3px solid #CC0000;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+
+    .feature strong {
+      display: block;
+      color: #CC0000;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .feature span { font-size: 0.875rem; color: #666; line-height: 1.5; }
+
+    .badge {
+      display: inline-block;
+      background: #CC0000;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.85rem;
+      color: #999;
+    }
+
+    footer a { color: #CC0000; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>ThalaBlood</h1>
+    <p>A personal health tracker for Thalassemia patients</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- About -->
+  <section id="about">
+    <div class="card">
+      <span class="badge">100% FREE</span>
+      <h2>About ThalaBlood</h2>
+      <p>
+        ThalaBlood is a free, offline personal health assistant designed specifically
+        for Thalassemia patients — built by a Thalassemia patient.
+      </p>
+      <p>
+        Managing transfusion schedules, blood test results, and daily medications
+        can be overwhelming. ThalaBlood makes it simple, organized, and stress-free —
+        all on your phone, with no account required.
+      </p>
+      <p>
+        Available on Android via Google Play.
+      </p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="card">
+      <h2>Features</h2>
+      <div class="features">
+        <div class="feature">
+          <strong>Transfusion Tracking</strong>
+          <span>Log every transfusion with Hb and ferritin values. Highlights your next expected date based on your personal cycle setting.</span>
+        </div>
+        <div class="feature">
+          <strong>Medication Reminders</strong>
+          <span>Track daily medications with dose and frequency. Get reminded if you haven't taken them.</span>
+        </div>
+        <div class="feature">
+          <strong>Lab Results</strong>
+          <span>Store Hb and ferritin measurements over time with trend charts.</span>
+        </div>
+        <div class="feature">
+          <strong>Medical Calendar</strong>
+          <span>Log doctor appointments, scans, and other medical events. View upcoming events at a glance.</span>
+        </div>
+        <div class="feature">
+          <strong>PDF Reports</strong>
+          <span>Export a full yearly health report as a PDF to share with your doctor.</span>
+        </div>
+        <div class="feature">
+          <strong>Fully Offline</strong>
+          <span>No internet connection needed. All your data stays on your device.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy -->
+  <section id="privacy">
+    <div class="card">
+      <h2>Privacy Policy</h2>
+      <p><em>Last updated: May 2026</em></p>
+
+      <p>
+        ThalaBlood does not collect, store, or transmit any personal or health data
+        to external servers or third parties. All information you enter — transfusion
+        records, medication schedules, lab results, and medical events — is stored
+        exclusively on your device. The app works entirely offline and does not require
+        an internet connection, an account, or any personal information to use.
+      </p>
+      <p>
+        We do not use analytics services, advertising networks, or any third-party SDKs
+        that collect user data. The optional backup feature exports your data as a file
+        to your own device — it is never sent anywhere automatically.
+      </p>
+      <p>
+        If this policy changes, the updated version will be posted here. For any
+        questions, contact us at
+        <a href="mailto:thalabloodapp@gmail.com">thalabloodapp@gmail.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="card">
+      <h2 id="contact">Contact</h2>
+      <p>Email: <a href="mailto:thalabloodapp@gmail.com">thalabloodapp@gmail.com</a></p>
+      <p>Website: <a href="https://www.thalablood.com">www.thalablood.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 ThalaBlood. All rights reserved.</p>
+    <p style="margin-top: 6px;"><a href="#privacy">Privacy Policy</a></p>
+  </footer>
+
+</body>
+</html>
