@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/bugra/Downloads/index_2.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>ThalaBlood – Thalassemia Health Tracker</title>
   <style>
@@ -48,11 +48,13 @@
       font-size: clamp(2rem, 8vw, 2.8rem);
       font-weight: 800;
       letter-spacing: -0.5px;
+      color: white;
     }
 
     header p {
       margin-top: 10px;
       font-size: clamp(0.95rem, 4vw, 1.1rem);
+      color: white;
       opacity: 0.9;
     }
 
@@ -92,7 +94,6 @@
       opacity: 0.85;
       transition: opacity 0.15s, background 0.15s;
       white-space: nowrap;
-      /* Minimum tap target */
       min-height: 44px;
       display: flex;
       align-items: center;
@@ -175,7 +176,6 @@
 
     .privacy-card a {
       color: var(--red);
-      word-break: break-all;
     }
 
     /* ── CONTACT ── */
@@ -192,12 +192,11 @@
       font-weight: 600;
       font-size: 0.95rem;
       margin-top: 4px;
-      /* Minimum tap target */
       min-height: 52px;
       transition: background 0.15s;
     }
     .contact-link:hover { background: #FFE0E0; }
-    .contact-link .icon { font-size: 1.3rem; }
+    .contact-link .icon { font-size: 1.3rem; flex-shrink: 0; }
 
     /* ── FOOTER ── */
     footer {
@@ -209,14 +208,13 @@
 
     footer a { color: var(--red); text-decoration: none; }
 
-    /* ── ACCESSIBILITY: Focus ring ── */
+    /* ── ACCESSIBILITY ── */
     a:focus-visible {
       outline: 3px solid var(--red);
       outline-offset: 2px;
       border-radius: 4px;
     }
 
-    /* ── REDUCED MOTION ── */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
     }
@@ -232,10 +230,10 @@
   </header>
 
   <nav>
-    <a href="file:///C:/Users/bugra/Downloads/index_2.html#about">About</a>
-    <a href="file:///C:/Users/bugra/Downloads/index_2.html#features">Features</a>
-    <a href="file:///C:/Users/bugra/Downloads/index_2.html#privacy">Privacy</a>
-    <a href="file:///C:/Users/bugra/Downloads/index_2.html#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <!-- About -->
@@ -295,7 +293,6 @@
     <div class="card privacy-card">
       <h2>Privacy Policy</h2>
       <p><em>Last updated: May 2026</em></p>
-
       <p>
         ThalaBlood does not collect, store, or transmit any personal or health data
         to external servers or third parties. All information you enter — transfusion
@@ -312,8 +309,7 @@
         to your own device — it is never sent anywhere automatically.
       </p>
       <p>
-        If this policy changes, the updated version will be posted here. For questions,
-        contact us at <a href="mailto:thalabloodapp@gmail.com">thalabloodapp@gmail.com</a>.
+        If this policy changes, the updated version will be posted here.
       </p>
     </div>
   </section>
@@ -331,9 +327,8 @@
 
   <footer>
     <p>© 2026 ThalaBlood. All rights reserved.</p>
-    <p style="margin-top: 6px;"><a href="file:///C:/Users/bugra/Downloads/index_2.html#privacy">Privacy Policy</a></p>
+    <p style="margin-top: 6px;"><a href="#privacy">Privacy Policy</a></p>
   </footer>
 
-
-
-</body></html>
+</body>
+</html>
