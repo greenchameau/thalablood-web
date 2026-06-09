@@ -1,157 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- saved from url=(0045)file:///C:/Users/bugra/Downloads/index_2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   <title>ThalaBlood – Thalassemia Health Tracker</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #F5F5F5;
-      color: #333;
+    :root {
+      --red: #CC0000;
+      --red-dark: #AA0000;
+      --red-light: #FFF0F0;
+      --text: #222;
+      --muted: #666;
+      --border: #E8E8E8;
+      --bg: #F4F4F4;
+      --card: #FFFFFF;
     }
 
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ── HEADER ── */
     header {
-      background: #CC0000;
+      background: var(--red);
       color: white;
-      padding: 48px 24px 40px;
+      padding: 52px 20px 44px;
       text-align: center;
     }
 
+    .header-icon {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      display: block;
+      line-height: 1;
+    }
+
     header h1 {
-      font-size: 2.4rem;
+      font-size: clamp(2rem, 8vw, 2.8rem);
       font-weight: 800;
       letter-spacing: -0.5px;
     }
 
     header p {
       margin-top: 10px;
-      font-size: 1.1rem;
-      color: #fff;
+      font-size: clamp(0.95rem, 4vw, 1.1rem);
       opacity: 0.9;
     }
 
+    .badge-free {
+      display: inline-block;
+      margin-top: 16px;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: white;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    /* ── NAV ── */
     nav {
-      background: #AA0000;
+      background: var(--red-dark);
       display: flex;
       justify-content: center;
-      gap: 0;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      padding: 12px 28px;
-      font-size: 0.9rem;
+      padding: 13px 16px;
+      font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
       opacity: 0.85;
-      transition: opacity 0.2s;
+      transition: opacity 0.15s, background 0.15s;
+      white-space: nowrap;
+      /* Minimum tap target */
+      min-height: 44px;
+      display: flex;
+      align-items: center;
     }
 
-    nav a:hover { opacity: 1; background: rgba(255,255,255,0.1); }
+    nav a:hover,
+    nav a:focus { opacity: 1; background: rgba(255,255,255,0.12); outline: none; }
 
+    /* ── SECTIONS ── */
     section {
-      max-width: 760px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px 16px;
     }
 
+    /* ── CARDS ── */
     .card {
-      background: white;
-      border-radius: 14px;
-      padding: 32px;
-      margin-bottom: 24px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
     }
 
     h2 {
-      font-size: 1.3rem;
-      color: #CC0000;
+      font-size: 0.75rem;
+      color: var(--red);
       text-transform: uppercase;
-      letter-spacing: 0.6px;
-      margin-bottom: 16px;
+      letter-spacing: 1.2px;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
-    h3 {
-      font-size: 1rem;
-      color: #CC0000;
-      margin: 20px 0 8px;
+    p {
+      line-height: 1.75;
+      color: #555;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
     }
-
-    p { line-height: 1.7; color: #555; margin-bottom: 12px; }
     p:last-child { margin-bottom: 0; }
 
-    ul {
-      padding-left: 20px;
-      color: #555;
-      line-height: 1.9;
-    }
-
+    /* ── FEATURES GRID ── */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 8px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 380px) {
+      .features { grid-template-columns: 1fr; }
     }
 
     .feature {
-      background: #FFF5F5;
-      border-left: 3px solid #CC0000;
-      border-radius: 8px;
-      padding: 14px 16px;
+      background: var(--red-light);
+      border-left: 3px solid var(--red);
+      border-radius: 10px;
+      padding: 14px 14px;
     }
 
     .feature strong {
       display: block;
-      color: #CC0000;
-      font-size: 0.9rem;
-      margin-bottom: 4px;
-    }
-
-    .feature span { font-size: 0.875rem; color: #666; line-height: 1.5; }
-
-    .badge {
-      display: inline-block;
-      background: #CC0000;
-      color: white;
-      font-size: 0.75rem;
+      color: var(--red);
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 20px;
-      margin-bottom: 16px;
+      margin-bottom: 5px;
+      line-height: 1.3;
     }
 
+    .feature span {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.55;
+    }
+
+    /* ── PRIVACY ── */
+    .privacy-card p {
+      font-size: 0.92rem;
+    }
+
+    .privacy-card a {
+      color: var(--red);
+      word-break: break-all;
+    }
+
+    /* ── CONTACT ── */
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--red-light);
+      border: 1px solid #F0C0C0;
+      border-radius: 12px;
+      padding: 16px 18px;
+      text-decoration: none;
+      color: var(--red);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 4px;
+      /* Minimum tap target */
+      min-height: 52px;
+      transition: background 0.15s;
+    }
+    .contact-link:hover { background: #FFE0E0; }
+    .contact-link .icon { font-size: 1.3rem; }
+
+    /* ── FOOTER ── */
     footer {
       text-align: center;
-      padding: 32px 20px;
-      font-size: 0.85rem;
-      color: #999;
+      padding: 28px 20px 40px;
+      font-size: 0.82rem;
+      color: #AAA;
     }
 
-    footer a { color: #CC0000; text-decoration: none; }
+    footer a { color: var(--red); text-decoration: none; }
+
+    /* ── ACCESSIBILITY: Focus ring ── */
+    a:focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ── REDUCED MOTION ── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
 
   <header>
+    <span class="header-icon">🩸</span>
     <h1>ThalaBlood</h1>
-    <p>A personal health tracker for Thalassemia patients</p>
+    <p>Personal health tracker for Thalassemia patients</p>
+    <span class="badge-free">100% Free</span>
   </header>
 
   <nav>
-    <a href="#about">About</a>
-    <a href="#features">Features</a>
-    <a href="#privacy">Privacy Policy</a>
-    <a href="#contact">Contact</a>
+    <a href="file:///C:/Users/bugra/Downloads/index_2.html#about">About</a>
+    <a href="file:///C:/Users/bugra/Downloads/index_2.html#features">Features</a>
+    <a href="file:///C:/Users/bugra/Downloads/index_2.html#privacy">Privacy</a>
+    <a href="file:///C:/Users/bugra/Downloads/index_2.html#contact">Contact</a>
   </nav>
 
   <!-- About -->
   <section id="about">
     <div class="card">
-      <span class="badge">100% FREE</span>
       <h2>About ThalaBlood</h2>
       <p>
         ThalaBlood is a free, offline personal health assistant designed specifically
@@ -159,7 +248,7 @@
       </p>
       <p>
         Managing transfusion schedules, blood test results, and daily medications
-        can be overwhelming. ThalaBlood makes it simple, organized, and stress-free —
+        can be overwhelming. ThalaBlood makes it simple, organised, and stress-free —
         all on your phone, with no account required.
       </p>
       <p>
@@ -175,11 +264,11 @@
       <div class="features">
         <div class="feature">
           <strong>Transfusion Tracking</strong>
-          <span>Log every transfusion with Hb and ferritin values. Highlights your next expected date based on your personal cycle setting.</span>
+          <span>Log every transfusion with Hb and ferritin values. Highlights your next expected date.</span>
         </div>
         <div class="feature">
           <strong>Medication Reminders</strong>
-          <span>Track daily medications with dose and frequency. Get reminded if you haven't taken them.</span>
+          <span>Track daily medications with dose and frequency reminders.</span>
         </div>
         <div class="feature">
           <strong>Lab Results</strong>
@@ -187,7 +276,7 @@
         </div>
         <div class="feature">
           <strong>Medical Calendar</strong>
-          <span>Log doctor appointments, scans, and other medical events. View upcoming events at a glance.</span>
+          <span>Log appointments, scans, and events. View upcoming at a glance.</span>
         </div>
         <div class="feature">
           <strong>PDF Reports</strong>
@@ -195,7 +284,7 @@
         </div>
         <div class="feature">
           <strong>Fully Offline</strong>
-          <span>No internet connection needed. All your data stays on your device.</span>
+          <span>No internet needed. All data stays on your device.</span>
         </div>
       </div>
     </div>
@@ -203,7 +292,7 @@
 
   <!-- Privacy Policy -->
   <section id="privacy">
-    <div class="card">
+    <div class="card privacy-card">
       <h2>Privacy Policy</h2>
       <p><em>Last updated: May 2026</em></p>
 
@@ -211,8 +300,11 @@
         ThalaBlood does not collect, store, or transmit any personal or health data
         to external servers or third parties. All information you enter — transfusion
         records, medication schedules, lab results, and medical events — is stored
-        exclusively on your device. The app works entirely offline and does not require
-        an internet connection, an account, or any personal information to use.
+        exclusively on your device.
+      </p>
+      <p>
+        The app works entirely offline and does not require an internet connection,
+        an account, or any personal information to use.
       </p>
       <p>
         We do not use analytics services, advertising networks, or any third-party SDKs
@@ -220,9 +312,8 @@
         to your own device — it is never sent anywhere automatically.
       </p>
       <p>
-        If this policy changes, the updated version will be posted here. For any
-        questions, contact us at
-        <a href="mailto:thalabloodapp@gmail.com">thalabloodapp@gmail.com</a>.
+        If this policy changes, the updated version will be posted here. For questions,
+        contact us at <a href="mailto:thalabloodapp@gmail.com">thalabloodapp@gmail.com</a>.
       </p>
     </div>
   </section>
@@ -230,15 +321,19 @@
   <!-- Contact -->
   <section id="contact">
     <div class="card">
-      <h2 id="contact">Contact</h2>
-      <p>Email: <a href="mailto:thalabloodapp@gmail.com">thalabloodapp@gmail.com</a></p>
+      <h2>Contact</h2>
+      <a href="mailto:thalabloodapp@gmail.com" class="contact-link">
+        <span class="icon">✉️</span>
+        thalabloodapp@gmail.com
+      </a>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2026 ThalaBlood. All rights reserved.</p>
-    <p style="margin-top: 6px;"><a href="#privacy">Privacy Policy</a></p>
+    <p>© 2026 ThalaBlood. All rights reserved.</p>
+    <p style="margin-top: 6px;"><a href="file:///C:/Users/bugra/Downloads/index_2.html#privacy">Privacy Policy</a></p>
   </footer>
 
-</body>
-</html>
+
+
+</body></html>
